@@ -1,0 +1,65 @@
+name:               preamble
+version:            0.0.1
+license:            BSD3
+license-file:       etc/LICENCE.md
+author:             Dom De Re
+maintainer:         Dom De Re
+copyright:          Copyright (C) 2014
+synopsis:           My own subset of Prelude
+category:           Data
+description:        My own subset of Prelude
+homepage:           https://github.com/domdere/preamble/issues
+bug-reports:        https://github.com/domdere/preamble/issues
+cabal-version:      >= 1.18
+build-type:         Custom
+--extra-source-files: etc/CONTRIBUTORS,
+--                    etc/CREDITS
+
+source-repository       head
+    type:               git
+    location:           https://github.com/domdere/preamble
+
+flag                    small_base
+    description:        Choose the new, split-up base package.
+
+library
+    default-language:   Haskell2010
+
+    build-depends:      base < 5 && >= 4
+                    ,   containers
+                    ,   array
+                    ,   bifunctors          == 5.*
+                    ,   either              == 4.3.*
+                    ,   mtl                 == 2.1.*
+                    ,   semigroups          == 0.16.*
+                    ,   transformers        > 0.3 && <= 0.5
+
+    ghc-options:        -Wall
+                        -fno-warn-unused-imports
+                        -fno-warn-unused-binds
+                        -fno-warn-unused-do-bind
+                        -fno-warn-type-defaults
+
+    hs-source-dirs:     src
+
+    exposed-modules:    Preamble
+
+    default-extensions: NoImplicitPrelude
+
+test-suite              quickcheck
+    default-language:   Haskell2010
+    type:               exitcode-stdio-1.0
+    main-is:            Main.hs
+    hs-source-dirs:     quickcheck
+    build-depends:      base                >= 4 && < 5
+                    ,   QuickCheck          == 2.7.6
+                    ,   preamble
+
+
+test-suite              hlint
+    default-language:   Haskell2010
+    type:               exitcode-stdio-1.0
+    main-is:            Main.hs
+    hs-source-dirs:     hlint
+    build-depends:      base
+                    ,   hlint               == 1.9.*
