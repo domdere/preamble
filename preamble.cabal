@@ -30,7 +30,7 @@ library
                     ,   array
                     ,   bifunctors          == 5.*
                     ,   either              == 4.3.*
-                    ,   mtl                 == 2.1.*
+                    ,   mtl                 == 2.2.*
                     ,   semigroups          == 0.16.*
                     ,   transformers        > 0.3 && <= 0.5
 
