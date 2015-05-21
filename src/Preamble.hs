@@ -51,12 +51,16 @@ module Preamble (
     ,   maybe
     ,   otherwise
     ,   ord
+    -- ** Foldable
     ,   sequenceA_
     ,   traverse_
     -- ** NonEmpty Lists
     ,   nonEmpty
     ,   head
     ,   tail
+    -- ** Monad
+    ,   replicateM
+    ,   replicateM_
     -- ** Monad Transformers
     ,   lift
     -- *** EitherT
@@ -68,6 +72,7 @@ module Preamble (
 
 import Prelude hiding ( head, tail )
 import Control.Applicative
+import Control.Monad ( replicateM, replicateM_ )
 import Control.Monad.Trans ( lift )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
