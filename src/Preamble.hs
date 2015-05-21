@@ -51,6 +51,8 @@ module Preamble (
     ,   maybe
     ,   otherwise
     ,   ord
+    ,   sequenceA_
+    ,   traverse_
     -- ** NonEmpty Lists
     ,   nonEmpty
     ,   head
@@ -70,7 +72,7 @@ import Control.Monad.Trans ( lift )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
-import Data.Foldable ( Foldable(..) )
+import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
 import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
