@@ -59,6 +59,8 @@ module Preamble (
     ,   maybe
     ,   otherwise
     ,   ord
+    ,   unless
+    ,   when
     -- ** Foldable
     ,   sequenceA_
     ,   traverse_
@@ -80,7 +82,7 @@ module Preamble (
 
 import Prelude hiding ( head, tail )
 import Control.Applicative
-import Control.Monad ( replicateM, replicateM_ )
+import Control.Monad ( replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..) )
 import Control.Monad.State ( MonadState(..), State, StateT(..) )
