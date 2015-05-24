@@ -57,6 +57,7 @@ module Preamble (
     ,   either
     ,   fromIntegral
     ,   maybe
+    ,   on
     ,   otherwise
     ,   ord
     ,   unless
@@ -91,6 +92,7 @@ import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
 import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
+import Data.Function ( on )
 import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
