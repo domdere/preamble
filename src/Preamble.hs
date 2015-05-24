@@ -17,6 +17,8 @@ module Preamble (
     ,   Applicative(..)
     ,   Bifunctor(..)
     ,   Monad(..)
+    ,   MonadReader(..)
+    ,   MonadState(..)
     ,   Monoid(..)
     ,   Semigroup(..)
     ,   Show(..)
@@ -27,14 +29,20 @@ module Preamble (
     ,   Bool(..)
     ,   Char
     ,   Double
-    ,   Either(..)
-    ,   EitherT(..)
     ,   Int
-    ,   IO
-    ,   Maybe
     ,   NonEmpty(..)
     ,   String
     ,   Word16
+    -- ** Monads and Monad Transformers
+    ,   Either(..)
+    ,   EitherT(..)
+    ,   IO
+    ,   Identity(..)
+    ,   Maybe
+    ,   Reader
+    ,   ReaderT(..)
+    ,   State
+    ,   StateT(..)
     -- * Operators
     ,   (.)
     ,   ($)
@@ -73,6 +81,9 @@ module Preamble (
 import Prelude hiding ( head, tail )
 import Control.Applicative
 import Control.Monad ( replicateM, replicateM_ )
+import Control.Monad.Identity ( Identity(..) )
+import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..) )
+import Control.Monad.State ( MonadState(..), State, StateT(..) )
 import Control.Monad.Trans ( lift )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
