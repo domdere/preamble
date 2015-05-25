@@ -74,6 +74,8 @@ module Preamble (
     ,   replicateM_
     -- ** Monad Transformers
     ,   lift
+    ,   asks
+    ,   gets
     -- *** EitherT
     ,   bimapEitherT
     ,   hoistEither
@@ -85,8 +87,8 @@ import Prelude hiding ( head, tail )
 import Control.Applicative
 import Control.Monad ( replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
-import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..) )
-import Control.Monad.State ( MonadState(..), State, StateT(..) )
+import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
+import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
 import Control.Monad.Trans ( lift )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
