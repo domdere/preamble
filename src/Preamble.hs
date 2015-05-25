@@ -19,6 +19,7 @@ module Preamble (
     ,   Monad(..)
     ,   MonadReader(..)
     ,   MonadState(..)
+    ,   MonadTrans(..)
     ,   Monoid(..)
     ,   Semigroup(..)
     ,   Show(..)
@@ -73,7 +74,6 @@ module Preamble (
     ,   replicateM
     ,   replicateM_
     -- ** Monad Transformers
-    ,   lift
     ,   asks
     ,   gets
     -- *** EitherT
@@ -89,7 +89,7 @@ import Control.Monad ( replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
 import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
-import Control.Monad.Trans ( lift )
+import Control.Monad.Trans ( MonadTrans(..) )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
