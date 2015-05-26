@@ -39,7 +39,7 @@ module Preamble (
     ,   EitherT(..)
     ,   IO
     ,   Identity(..)
-    ,   Maybe
+    ,   Maybe(..)
     ,   Reader
     ,   ReaderT(..)
     ,   State
@@ -78,6 +78,7 @@ module Preamble (
     ,   gets
     -- *** EitherT
     ,   bimapEitherT
+    ,   eitherT
     ,   hoistEither
     ,   left
     ,   mapEitherT
@@ -90,7 +91,7 @@ import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
 import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
 import Control.Monad.Trans ( MonadTrans(..) )
-import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, hoistEither, left, mapEitherT )
+import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
 import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
