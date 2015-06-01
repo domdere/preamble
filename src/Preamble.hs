@@ -53,6 +53,8 @@ module Preamble (
     ,   (||)
     -- ** Monad
     ,   (=<<)
+    ,   (>=>)
+    ,   (<=<)
     -- * Functions
     ,   id
     ,   const
@@ -89,7 +91,7 @@ module Preamble (
 
 import Prelude hiding ( head, tail )
 import Control.Applicative
-import Control.Monad ( (=<<), join, replicateM, replicateM_, unless, when )
+import Control.Monad ( (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
 import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
