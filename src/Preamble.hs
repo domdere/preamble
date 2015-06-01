@@ -51,6 +51,8 @@ module Preamble (
     ,   (++)
     ,   (&&)
     ,   (||)
+    -- ** Monad
+    ,   (=<<)
     -- * Functions
     ,   id
     ,   const
@@ -61,8 +63,6 @@ module Preamble (
     ,   on
     ,   otherwise
     ,   ord
-    ,   unless
-    ,   when
     -- ** Foldable
     ,   sequenceA_
     ,   traverse_
@@ -71,8 +71,11 @@ module Preamble (
     ,   head
     ,   tail
     -- ** Monad
+    ,   join
     ,   replicateM
     ,   replicateM_
+    ,   unless
+    ,   when
     -- ** Monad Transformers
     ,   asks
     ,   gets
@@ -86,7 +89,7 @@ module Preamble (
 
 import Prelude hiding ( head, tail )
 import Control.Applicative
-import Control.Monad ( replicateM, replicateM_, unless, when )
+import Control.Monad ( (=<<), join, replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
 import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
