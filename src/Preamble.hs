@@ -34,7 +34,9 @@ module Preamble (
     ,   Int
     ,   NonEmpty(..)
     ,   String
+    ,   Word8
     ,   Word16
+    ,   Word32
     -- ** Monads and Monad Transformers
     ,   Either(..)
     ,   EitherT(..)
@@ -108,4 +110,4 @@ import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
 import Data.Traversable ( Traversable(..) )
-import Data.Word ( Word16 )
+import Data.Word ( Word8, Word16, Word32 )
