@@ -17,6 +17,7 @@ module Preamble (
     ,   Applicative(..)
     ,   Bifunctor(..)
     ,   Monad(..)
+    ,   MonadPlus(..)
     ,   MonadReader(..)
     ,   MonadState(..)
     ,   MonadTrans(..)
@@ -92,7 +93,7 @@ module Preamble (
 
 import Prelude hiding ( head, tail )
 import Control.Applicative
-import Control.Monad ( (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
+import Control.Monad ( MonadPlus(..), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
 import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
 import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
