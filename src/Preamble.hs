@@ -72,6 +72,23 @@ module Preamble (
     -- ** Foldable
     ,   sequenceA_
     ,   traverse_
+    -- ** Either
+    ,   lefts
+    ,   rights
+    ,   partitionEithers
+    -- ** Maybe
+    ,   catMaybes
+    -- ** Lists
+    ,   drop
+    ,   dropWhile
+    ,   take
+    ,   takeWhile
+    ,   elem
+    ,   filter
+    ,   notElem
+    ,   partition
+    ,   zip
+    ,   zipWith
     -- ** NonEmpty Lists
     ,   nonEmpty
     ,   head
@@ -104,9 +121,12 @@ import Control.Monad.Trans.Maybe ( MaybeT(..) )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT )
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
+import Data.Either ( lefts, rights, partitionEithers )
 import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
 import Data.Function ( on )
+import Data.List ( partition )
 import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
+import Data.Maybe ( catMaybes )
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
 import Data.Traversable ( Traversable(..) )
