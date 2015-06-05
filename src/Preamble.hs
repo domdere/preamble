@@ -32,6 +32,7 @@ module Preamble (
     ,   Char
     ,   Double
     ,   Int
+    ,   Const(..)
     ,   NonEmpty(..)
     ,   String
     ,   Word8
