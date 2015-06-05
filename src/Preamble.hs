@@ -63,21 +63,27 @@ module Preamble (
     ,   id
     ,   const
     ,   flip
-    ,   either
     ,   fromIntegral
-    ,   maybe
     ,   on
     ,   otherwise
     ,   ord
     -- ** Foldable
     ,   sequenceA_
     ,   traverse_
+    -- ** Tuple
+    ,   curry
+    ,   fst
+    ,   snd
+    ,   uncurry
     -- ** Either
+    ,   either
     ,   lefts
     ,   rights
     ,   partitionEithers
     -- ** Maybe
     ,   catMaybes
+    ,   fromMaybe
+    ,   maybe
     -- ** Lists
     ,   drop
     ,   dropWhile
@@ -126,7 +132,7 @@ import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
 import Data.Function ( on )
 import Data.List ( partition )
 import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
-import Data.Maybe ( catMaybes )
+import Data.Maybe ( catMaybes, fromMaybe )
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
 import Data.Traversable ( Traversable(..) )
