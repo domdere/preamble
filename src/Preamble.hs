@@ -71,6 +71,7 @@ module Preamble (
     -- ** Foldable
     ,   sequenceA_
     ,   traverse_
+    ,   toList
     -- ** Tuple
     ,   curry
     ,   fst
@@ -133,7 +134,7 @@ import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, eitherT, hoistEit
 import Data.Bifunctor ( Bifunctor(..) )
 import Data.Char ( ord )
 import Data.Either ( lefts, rights, partitionEithers )
-import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
+import Data.Foldable ( Foldable(..), sequenceA_, traverse_, toList )
 import Data.Function ( on )
 import Data.List ( partition )
 import Data.List.NonEmpty ( NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
