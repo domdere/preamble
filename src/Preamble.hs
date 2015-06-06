@@ -97,6 +97,10 @@ module Preamble (
     ,   zip
     ,   zipWith
     -- ** NonEmpty Lists
+    ,   group
+    ,   groupBy
+    ,   group1
+    ,   groupBy1
     ,   nonEmpty
     ,   head
     ,   tail
@@ -132,7 +136,7 @@ import Data.Either ( lefts, rights, partitionEithers )
 import Data.Foldable ( Foldable(..), sequenceA_, traverse_ )
 import Data.Function ( on )
 import Data.List ( partition )
-import Data.List.NonEmpty ( NonEmpty(..), nonEmpty, head, tail)
+import Data.List.NonEmpty ( NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
 import Data.Maybe ( catMaybes, fromMaybe )
 import Data.Monoid ( Monoid(..) )
 import Data.Semigroup ( Semigroup(..) )
