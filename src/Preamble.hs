@@ -109,6 +109,8 @@ module Preamble (
     ,   join
     ,   replicateM
     ,   replicateM_
+    ,   runReader
+    ,   runState
     ,   unless
     ,   when
     -- ** Monad Transformers
@@ -126,8 +128,8 @@ import Prelude hiding ( head, tail )
 import Control.Applicative
 import Control.Monad ( MonadPlus(..), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
-import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks )
-import Control.Monad.State ( MonadState(..), State, StateT(..), gets )
+import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks, runReader )
+import Control.Monad.State ( MonadState(..), State, StateT(..), gets, runState )
 import Control.Monad.Trans ( MonadTrans(..) )
 import Control.Monad.Trans.Maybe ( MaybeT(..) )
 import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT )
