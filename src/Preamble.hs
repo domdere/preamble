@@ -35,6 +35,8 @@ module Preamble (
     ,   Const(..)
     ,   NonEmpty(..)
     ,   String
+    ,   Sum(..)
+    ,   Product(..)
     ,   Word8
     ,   Word16
     ,   Word32
@@ -141,7 +143,7 @@ import Data.Function ( on )
 import Data.List ( partition )
 import Data.List.NonEmpty ( NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
 import Data.Maybe ( catMaybes, fromMaybe )
-import Data.Monoid ( Monoid(..) )
+import Data.Monoid ( Monoid(..), Sum(..), Product(..) )
 import Data.Semigroup ( Semigroup(..) )
 import Data.Traversable ( Traversable(..) )
 import Data.Word ( Word8, Word16, Word32 )
