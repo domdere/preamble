@@ -54,6 +54,7 @@ module Preamble (
     -- * Operators
     ,   (.)
     ,   ($)
+    ,   ($!)
     ,   (<$>)
     ,   (++)
     ,   (&&)
