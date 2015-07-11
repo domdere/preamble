@@ -32,6 +32,10 @@ module Preamble (
     ,   Char
     ,   Double
     ,   Int
+    ,   Int8
+    ,   Int16
+    ,   Int32
+    ,   Int64
     ,   Const(..)
     ,   NonEmpty(..)
     ,   String
@@ -40,6 +44,7 @@ module Preamble (
     ,   Word8
     ,   Word16
     ,   Word32
+    ,   Word64
     -- ** Monads and Monad Transformers
     ,   Either(..)
     ,   EitherT(..)
@@ -141,7 +146,7 @@ import Data.Either ( Either(..), either, lefts, rights, partitionEithers )
 import Data.Foldable ( Foldable(..), sequenceA_, traverse_, notElem, toList )
 import Data.Function ( const, flip, id, on )
 import Data.Functor ( Functor(..) )
-import Data.Int ( Int )
+import Data.Int ( Int, Int8, Int16, Int32, Int64 )
 import Data.List ( (++), drop, dropWhile, filter, partition, take, takeWhile, zip, zipWith )
 import Data.List.NonEmpty ( NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
 import Data.Maybe ( Maybe(..), catMaybes, fromMaybe, maybe )
@@ -151,5 +156,5 @@ import Data.Semigroup ( Semigroup(..) )
 import Data.String ( String )
 import Data.Traversable ( Traversable(..) )
 import Data.Tuple ( fst, snd, curry, uncurry )
-import Data.Word ( Word8, Word16, Word32 )
+import Data.Word ( Word8, Word16, Word32, Word64 )
 import System.IO ( IO )
