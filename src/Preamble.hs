@@ -37,6 +37,7 @@ module Preamble (
     ,   Int32
     ,   Int64
     ,   Const(..)
+    ,   Ordering(..)
     ,   NonEmpty(..)
     ,   String
     ,   Sum(..)
@@ -130,7 +131,7 @@ module Preamble (
     ,   mapEitherT
     ) where
 
-import Prelude ( Show(..), Eq(..), Num(..), Double, ($), ($!), (.), fromIntegral, otherwise )
+import Prelude ( Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise )
 import Control.Applicative
 import Control.Monad ( Monad(..), MonadPlus(..), (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
 import Control.Monad.Identity ( Identity(..) )
