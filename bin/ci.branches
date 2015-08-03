@@ -1,0 +1,10 @@
+#!/bin/sh -eux
+
+ROOT_DIR=$(pwd) || exit $?
+
+git submodule init
+git submodule update
+
+make build
+make hlint
+make test
