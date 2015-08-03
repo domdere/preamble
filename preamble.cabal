@@ -37,8 +37,10 @@ library
     ghc-options:        -Wall
 
     hs-source-dirs:     src
+                        gen
 
-    exposed-modules:    Preamble
+    exposed-modules:    BuildInfo_preamble
+                        Preamble
 
     default-extensions: NoImplicitPrelude
 
