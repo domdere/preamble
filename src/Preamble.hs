@@ -79,8 +79,11 @@ module Preamble (
     ,   otherwise
     ,   ord
     -- ** Foldable
+    ,   forM_
     ,   sequenceA_
     ,   traverse_
+    -- ** Traversable
+    ,   forM
     -- ** Tuple
     ,   curry
     ,   fst
@@ -132,32 +135,32 @@ module Preamble (
     ,   mapEitherT
     ) where
 
-import Prelude ( Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise )
+import Prelude (Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
 import Control.Applicative
-import Control.Monad ( Monad(..), MonadPlus(..), (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when )
-import Control.Monad.Identity ( Identity(..) )
-import Control.Monad.IO.Class ( MonadIO(..) )
-import Control.Monad.Reader ( MonadReader(..), Reader, ReaderT(..), asks, runReader )
-import Control.Monad.State ( MonadState(..), State, StateT(..), gets, runState )
-import Control.Monad.Trans ( MonadTrans(..) )
-import Control.Monad.Trans.Maybe ( MaybeT(..) )
-import Control.Monad.Trans.Either ( EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT )
-import Data.Bifunctor ( Bifunctor(..) )
-import Data.Bool ( Bool(..), (&&), (||) )
-import Data.Char ( Char, ord )
-import Data.Either ( Either(..), either, lefts, rights, partitionEithers )
-import Data.Foldable ( Foldable(..), sequenceA_, traverse_, notElem, toList )
-import Data.Function ( const, flip, id, on )
-import Data.Functor ( Functor(..) )
-import Data.Int ( Int, Int8, Int16, Int32, Int64 )
-import Data.List ( (++), drop, dropWhile, filter, partition, take, takeWhile, zip, zipWith )
-import Data.List.NonEmpty ( NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
-import Data.Maybe ( Maybe(..), catMaybes, fromMaybe, maybe )
-import Data.Monoid ( Monoid(..), Sum(..), Product(..) )
-import Data.Ord ( Ord(..) )
-import Data.Semigroup ( Semigroup(..) )
-import Data.String ( String )
-import Data.Traversable ( Traversable(..) )
-import Data.Tuple ( fst, snd, curry, uncurry )
-import Data.Word ( Word8, Word16, Word32, Word64 )
-import System.IO ( IO )
+import Control.Monad (Monad(..), MonadPlus(..), (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when)
+import Control.Monad.Identity (Identity(..))
+import Control.Monad.IO.Class (MonadIO(..))
+import Control.Monad.Reader (MonadReader(..), Reader, ReaderT(..), asks, runReader)
+import Control.Monad.State (MonadState(..), State, StateT(..), gets, runState)
+import Control.Monad.Trans (MonadTrans(..))
+import Control.Monad.Trans.Maybe (MaybeT(..))
+import Control.Monad.Trans.Either (EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT)
+import Data.Bifunctor (Bifunctor(..))
+import Data.Bool (Bool(..), (&&), (||))
+import Data.Char (Char, ord)
+import Data.Either (Either(..), either, lefts, rights, partitionEithers)
+import Data.Foldable (Foldable(..), forM_, sequenceA_, traverse_, notElem, toList)
+import Data.Function (const, flip, id, on)
+import Data.Functor (Functor(..))
+import Data.Int (Int, Int8, Int16, Int32, Int64)
+import Data.List ((++), drop, dropWhile, filter, partition, take, takeWhile, zip, zipWith)
+import Data.List.NonEmpty (NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
+import Data.Maybe (Maybe(..), catMaybes, fromMaybe, maybe)
+import Data.Monoid (Monoid(..), Sum(..), Product(..))
+import Data.Ord (Ord(..))
+import Data.Semigroup (Semigroup(..))
+import Data.String (String)
+import Data.Traversable (Traversable(..), forM)
+import Data.Tuple (fst, snd, curry, uncurry)
+import Data.Word (Word8, Word16, Word32, Word64)
+import System.IO (IO)
