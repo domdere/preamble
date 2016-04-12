@@ -49,7 +49,7 @@ module Preamble (
     ,   Word64
     -- ** Monads and Monad Transformers
     ,   Either(..)
-    ,   EitherT(..)
+    ,   ExceptT(..)
     ,   IO
     ,   Identity(..)
     ,   Maybe(..)
@@ -127,12 +127,12 @@ module Preamble (
     -- ** Monad Transformers
     ,   asks
     ,   gets
-    -- *** EitherT
-    ,   bimapEitherT
-    ,   eitherT
-    ,   hoistEither
-    ,   left
-    ,   mapEitherT
+    -- *** ExceptT
+    ,   catchE
+    ,   mapExceptT
+    ,   runExceptT
+    ,   throwE
+    ,   withExceptT
     ) where
 
 import Prelude (Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
@@ -144,7 +144,9 @@ import Control.Monad.Reader (MonadReader(..), Reader, ReaderT(..), asks, runRead
 import Control.Monad.State (MonadState(..), State, StateT(..), gets, runState)
 import Control.Monad.Trans (MonadTrans(..))
 import Control.Monad.Trans.Maybe (MaybeT(..))
-import Control.Monad.Trans.Either (EitherT(..), bimapEitherT, eitherT, hoistEither, left, mapEitherT)
+-- EitherT was good enough, but it looks like the rest of the world will be using ExceptT so now i have to make the aesthetic
+-- change and use the crappier functions
+import Control.Monad.Trans.Except (ExceptT(..), catchE, mapExceptT, runExceptT, throwE, withExceptT)
 import Data.Bifunctor (Bifunctor(..))
 import Data.Bool (Bool(..), (&&), (||))
 import Data.Char (Char, ord)
