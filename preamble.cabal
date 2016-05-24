@@ -4,7 +4,7 @@ license:            BSD3
 license-file:       etc/LICENCE.md
 author:             Dom De Re
 maintainer:         Dom De Re
-copyright:          Copyright (C) 2014
+copyright:          Copyright (C) 2014-2016
 synopsis:           My own subset of Prelude
 category:           Data
 description:        My own subset of Prelude
@@ -17,7 +17,7 @@ build-type:         Simple
 
 source-repository       head
     type:               git
-    location:           https://github.com/domdere/preamble
+    location:           https://github.com/domdere/preamble.git
 
 flag                    small_base
     description:        Choose the new, split-up base package.
