@@ -117,6 +117,8 @@ module Preamble (
     ,   nonEmpty
     ,   head
     ,   tail
+    -- ** Applicative
+    ,   optional
     -- ** Monad
     ,   join
     ,   replicateM
