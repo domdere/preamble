@@ -30,6 +30,7 @@ library
                     ,   array
                     ,   bifunctors          == 5.*
                     ,   mtl                 == 2.2.*
+                    ,   natural-numbers     == 0.1.*
                     ,   semigroups          == 0.18.*
                     ,   transformers        > 0.3 && <= 0.5
 

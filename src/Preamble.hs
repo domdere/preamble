@@ -10,133 +10,140 @@
 --
 -------------------------------------------------------------------
 module Preamble (
-    -- * Type Classes
-        Functor(..)
-    ,   Foldable(..)
-    ,   Traversable(..)
-    ,   Alternative(..)
-    ,   Applicative(..)
-    ,   Bifunctor(..)
-    ,   Monad(..)
-    ,   MonadIO(..)
-    ,   MonadPlus(..)
-    ,   MonadReader(..)
-    ,   MonadState(..)
-    ,   MonadTrans(..)
-    ,   Monoid(..)
-    ,   Semigroup(..)
-    ,   Show(..)
-    ,   Eq(..)
-    ,   Num(..)
-    ,   Ord(..)
-    -- * Types
-    ,   Bool(..)
-    ,   Char
-    ,   Double
-    ,   Int
-    ,   Int8
-    ,   Int16
-    ,   Int32
-    ,   Int64
-    ,   Const(..)
-    ,   Ordering(..)
-    ,   NonEmpty(..)
-    ,   String
-    ,   Sum(..)
-    ,   Product(..)
-    ,   Word8
-    ,   Word16
-    ,   Word32
-    ,   Word64
-    -- ** Monads and Monad Transformers
-    ,   Either(..)
-    ,   ExceptT(..)
-    ,   IO
-    ,   Identity(..)
-    ,   Maybe(..)
-    ,   MaybeT(..)
-    ,   Reader
-    ,   ReaderT(..)
-    ,   State
-    ,   StateT(..)
-    -- * Operators
-    ,   (.)
-    ,   ($)
-    ,   ($!)
-    ,   (<$>)
-    ,   (++)
-    ,   (&&)
-    ,   (||)
-    -- ** Monad
-    ,   (=<<)
-    ,   (>=>)
-    ,   (<=<)
-    -- * Functions
-    ,   id
-    ,   const
-    ,   flip
-    ,   fromIntegral
-    ,   on
-    ,   otherwise
-    ,   ord
-    -- ** Foldable
-    ,   forM_
-    ,   sequenceA_
-    ,   traverse_
-    -- ** Traversable
-    ,   forM
-    -- ** Tuple
-    ,   curry
-    ,   fst
-    ,   snd
-    ,   uncurry
-    -- ** Either
-    ,   either
-    ,   lefts
-    ,   rights
-    ,   partitionEithers
-    -- ** Maybe
-    ,   catMaybes
-    ,   fromMaybe
-    ,   maybe
-    -- ** Lists
-    ,   drop
-    ,   dropWhile
-    ,   take
-    ,   takeWhile
-    ,   filter
-    ,   notElem
-    ,   partition
-    ,   zip
-    ,   zipWith
-    -- ** NonEmpty Lists
-    ,   group
-    ,   groupBy
-    ,   group1
-    ,   groupBy1
-    ,   nonEmpty
-    ,   head
-    ,   tail
-    -- ** Applicative
-    ,   optional
-    -- ** Monad
-    ,   join
-    ,   replicateM
-    ,   replicateM_
-    ,   runReader
-    ,   runState
-    ,   unless
-    ,   when
-    -- ** Monad Transformers
-    ,   asks
-    ,   gets
-    -- *** ExceptT
-    ,   catchE
-    ,   mapExceptT
-    ,   runExceptT
-    ,   throwE
-    ,   withExceptT
-    ) where
+  -- * Type Classes
+    Functor(..)
+  , Foldable(..)
+  , Traversable(..)
+  , Alternative(..)
+  , Applicative(..)
+  , Bifunctor(..)
+  , Monad(..)
+  , MonadIO(..)
+  , MonadPlus(..)
+  , MonadReader(..)
+  , MonadState(..)
+  , MonadTrans(..)
+  , Monoid(..)
+  , Semigroup(..)
+  , Show(..)
+  , Eq(..)
+  , Num(..)
+  , Ord(..)
+  -- * Types
+  , Bool(..)
+  , Char
+  , Double
+  , Int
+  , Int8
+  , Int16
+  , Int32
+  , Int64
+  , Const(..)
+  , Ordering(..)
+  , NonEmpty(..)
+  , String
+  , Sum(..)
+  , Product(..)
+  , Word8
+  , Word16
+  , Word32
+  , Word64
+  -- ** Natural Numbers
+  , N.Natural
+  , N.View
+  -- ** Monads and Monad Transformers
+  , Either(..)
+  , ExceptT(..)
+  , IO
+  , Identity(..)
+  , Maybe(..)
+  , MaybeT(..)
+  , Reader
+  , ReaderT(..)
+  , State
+  , StateT(..)
+  -- * Operators
+  , (.)
+  , ($)
+  , ($!)
+  , (<$>)
+  , (++)
+  , (&&)
+  , (||)
+  -- ** Monad
+  , (=<<)
+  , (>=>)
+  , (<=<)
+  -- * Functions
+  , id
+  , const
+  , flip
+  , fromIntegral
+  , on
+  , otherwise
+  , ord
+  -- ** Natural Numbers
+  , foldNatural
+  , N.monus
+  , viewNatural
+  -- ** Foldable
+  , forM_
+  , sequenceA_
+  , traverse_
+  -- ** Traversable
+  , forM
+  -- ** Tuple
+  , curry
+  , fst
+  , snd
+  , uncurry
+  -- ** Either
+  , either
+  , lefts
+  , rights
+  , partitionEithers
+  -- ** Maybe
+  , catMaybes
+  , fromMaybe
+  , maybe
+  -- ** Lists
+  , drop
+  , dropWhile
+  , take
+  , takeWhile
+  , filter
+  , notElem
+  , partition
+  , zip
+  , zipWith
+  -- ** NonEmpty Lists
+  , group
+  , groupBy
+  , group1
+  , groupBy1
+  , nonEmpty
+  , head
+  , tail
+  -- ** Applicative
+  , optional
+  -- ** Monad
+  , join
+  , replicateM
+  , replicateM_
+  , runReader
+  , runState
+  , unless
+  , when
+  -- ** Monad Transformers
+  , asks
+  , gets
+  -- *** ExceptT
+  , catchE
+  , mapExceptT
+  , runExceptT
+  , throwE
+  , withExceptT
+  ) where
 
 import Prelude (Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
 import Control.Applicative
@@ -162,6 +169,7 @@ import Data.List ((++), drop, dropWhile, filter, partition, take, takeWhile, zip
 import Data.List.NonEmpty (NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
 import Data.Maybe (Maybe(..), catMaybes, fromMaybe, maybe)
 import Data.Monoid (Monoid(..), Sum(..), Product(..))
+import qualified Data.Natural as N (Natural, View, fold, monus, view)
 import Data.Ord (Ord(..))
 import Data.Semigroup (Semigroup(..))
 import Data.String (String)
@@ -169,3 +177,9 @@ import Data.Traversable (Traversable(..), forM)
 import Data.Tuple (fst, snd, curry, uncurry)
 import Data.Word (Word8, Word16, Word32, Word64)
 import System.IO (IO)
+
+foldNatural :: a -> (a ->a) -> N.Natural -> a
+foldNatural = N.fold
+
+viewNatural :: N.Natural -> N.View
+viewNatural = N.view
