@@ -44,6 +44,7 @@ module Preamble (
   , String
   , Sum(..)
   , Product(..)
+  , Void
   , Word8
   , Word16
   , Word32
@@ -124,6 +125,8 @@ module Preamble (
   , nonEmpty
   , head
   , tail
+  -- ** Functor
+  , void
   -- ** Applicative
   , optional
   -- ** Monad
@@ -143,6 +146,8 @@ module Preamble (
   , runExceptT
   , throwE
   , withExceptT
+  -- * Void
+  , absurd
   ) where
 
 import Prelude (Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
@@ -163,7 +168,7 @@ import Data.Char (Char, ord)
 import Data.Either (Either(..), either, lefts, rights, partitionEithers)
 import Data.Foldable (Foldable(..), forM_, sequenceA_, traverse_, notElem, toList)
 import Data.Function (const, flip, id, on)
-import Data.Functor (Functor(..))
+import Data.Functor (Functor(..), void)
 import Data.Int (Int, Int8, Int16, Int32, Int64)
 import Data.List ((++), drop, dropWhile, filter, partition, take, takeWhile, zip, zipWith)
 import Data.List.NonEmpty (NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
@@ -175,6 +180,7 @@ import Data.Semigroup (Semigroup(..))
 import Data.String (String)
 import Data.Traversable (Traversable(..), forM)
 import Data.Tuple (fst, snd, curry, uncurry)
+import Data.Void (Void, absurd)
 import Data.Word (Word8, Word16, Word32, Word64)
 import System.IO (IO)
 
