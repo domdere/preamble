@@ -38,6 +38,7 @@ module Preamble (
   , Int16
   , Int32
   , Int64
+  , Integer
   , Const(..)
   , Ordering(..)
   , NonEmpty(..)
@@ -152,7 +153,7 @@ module Preamble (
   , absurd
   ) where
 
-import Prelude (Show(..), Eq(..), Num(..), Double, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
+import Prelude (Show(..), Eq(..), Num(..), Double, Integer, Ordering(..), ($), ($!), (.), fromIntegral, otherwise)
 import Control.Applicative
 import Control.Monad (Monad(..), MonadPlus(..), (=<<), (>=>), (<=<), join, replicateM, replicateM_, unless, when)
 import Control.Monad.Identity (Identity(..))
