@@ -127,6 +127,8 @@ module Preamble (
   , groupBy1
   , nonEmpty
   , head
+  , init
+  , last
   , tail
   -- ** Functor
   , void
@@ -174,7 +176,7 @@ import Data.Function (const, flip, id, on)
 import Data.Functor (Functor(..), void)
 import Data.Int (Int, Int8, Int16, Int32, Int64)
 import Data.List ((++), drop, dropWhile, filter, partition, take, takeWhile, zip, zipWith)
-import Data.List.NonEmpty (NonEmpty(..), group, groupBy, group1, groupBy1, nonEmpty, head, tail)
+import Data.List.NonEmpty (NonEmpty(..), group, groupBy, group1, groupBy1, init, last, nonEmpty, head, tail)
 import Data.List.Split (chop, chunksOf)
 import Data.Maybe (Maybe(..), catMaybes, fromMaybe, maybe)
 import Data.Monoid (Monoid(..), Sum(..), Product(..))
