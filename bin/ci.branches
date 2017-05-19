@@ -2,9 +2,10 @@
 
 ROOT_DIR=$(pwd) || exit $?
 
+cabal update
+
 git submodule init
 git submodule update
 
-make build
-make hlint
-make test
+./mafia build
+./mafia test
