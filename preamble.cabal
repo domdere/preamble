@@ -1,14 +1,14 @@
-name:               preamble
+name:               domdere-preamble
 version:            0.0.1
 license:            BSD3
 license-file:       etc/LICENCE.md
 author:             Dom De Re
 maintainer:         Dom De Re
-copyright:          Copyright (C) 2014-2016
+copyright:          Copyright (C) 2014-2017
 synopsis:           My own subset of Prelude
 category:           Data
 description:        My own subset of Prelude
-homepage:           https://github.com/domdere/preamble/issues
+homepage:           https://github.com/domdere/preamble
 bug-reports:        https://github.com/domdere/preamble/issues
 cabal-version:      >= 1.18
 build-type:         Simple
@@ -33,7 +33,7 @@ library
                       , natural-numbers     == 0.1.*
                       , semigroups          == 0.18.*
                       , split               == 0.2.*
-                      , transformers        > 0.3 && <= 0.5
+                      , transformers        > 0.3 && <= 0.6
 
     ghc-options:        -Wall
 
@@ -48,4 +48,4 @@ test-suite              quickcheck
     hs-source-dirs:     quickcheck
     build-depends:      base                >= 4 && < 5
                     ,   QuickCheck          == 2.7.6
-                    ,   preamble
+                    ,   domdere-preamble
