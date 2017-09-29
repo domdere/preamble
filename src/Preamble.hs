@@ -92,10 +92,12 @@ module Preamble (
   , N.monus
   , viewNatural
   -- ** Foldable
+  , for_
   , forM_
   , sequenceA_
   , traverse_
   -- ** Traversable
+  , for
   , forM
   -- ** Tuple
   , curry
@@ -189,7 +191,7 @@ import Data.Bifunctor (Bifunctor(..))
 import Data.Bool (Bool(..), (&&), (||))
 import Data.Char (Char, ord)
 import Data.Either (Either(..), either, lefts, rights, partitionEithers)
-import Data.Foldable (Foldable(..), forM_, sequenceA_, traverse_, notElem, toList)
+import Data.Foldable (Foldable(..), for_, forM_, sequenceA_, traverse_, notElem, toList)
 import Data.Function (const, flip, id, on)
 import Data.Functor (Functor(..), void)
 import Data.Int (Int, Int8, Int16, Int32, Int64)
@@ -202,7 +204,7 @@ import qualified Data.Natural as N (Natural, View, fold, monus, view)
 import Data.Ord (Ord(..))
 import Data.Semigroup (Semigroup(..))
 import Data.String (String)
-import Data.Traversable (Traversable(..), forM)
+import Data.Traversable (Traversable(..), for, forM)
 import Data.Tuple (fst, snd, curry, uncurry)
 import Data.Void (Void, absurd)
 import Data.Word (Word8, Word16, Word32, Word64)
