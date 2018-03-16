@@ -33,7 +33,7 @@ library
                       , natural-numbers     == 0.1.*
                       , semigroups          == 0.18.*
                       , split               == 0.2.*
-                      , transformers        > 0.3 && <= 0.6
+                      , transformers        > 0.3 && <= 0.7
 
     ghc-options:        -Wall
 
