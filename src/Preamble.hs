@@ -84,6 +84,7 @@ module Preamble (
   , const
   , flip
   , fromIntegral
+  , not
   , on
   , otherwise
   , ord
@@ -94,6 +95,7 @@ module Preamble (
   -- ** Foldable
   , for_
   , forM_
+  , mapM_
   , sequenceA_
   , traverse_
   -- ** Traversable
@@ -188,10 +190,10 @@ import Control.Monad.Trans.Maybe (MaybeT(..))
 -- change and use the crappier functions
 import Control.Monad.Trans.Except (ExceptT(..), catchE, mapExceptT, runExceptT, throwE, withExceptT)
 import Data.Bifunctor (Bifunctor(..))
-import Data.Bool (Bool(..), (&&), (||))
+import Data.Bool (Bool(..), (&&), (||), not)
 import Data.Char (Char, ord)
 import Data.Either (Either(..), either, lefts, rights, partitionEithers)
-import Data.Foldable (Foldable(..), for_, forM_, sequenceA_, traverse_, notElem, toList)
+import Data.Foldable (Foldable(..), for_, forM_, sequenceA_, traverse_, notElem, mapM_, toList)
 import Data.Function (const, flip, id, on)
 import Data.Functor (Functor(..), void)
 import Data.Int (Int, Int8, Int16, Int32, Int64)
@@ -204,7 +206,7 @@ import qualified Data.Natural as N (Natural, View, fold, monus, view)
 import Data.Ord (Ord(..))
 import Data.Semigroup (Semigroup(..))
 import Data.String (String)
-import Data.Traversable (Traversable(..), for, forM)
+import Data.Traversable (Traversable(..), for, forM, mapM)
 import Data.Tuple (fst, snd, curry, uncurry)
 import Data.Void (Void, absurd)
 import Data.Word (Word8, Word16, Word32, Word64)
