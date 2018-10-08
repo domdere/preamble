@@ -67,6 +67,7 @@ module Preamble (
   , ReaderT(..)
   , State
   , StateT(..)
+  , evalStateT
   -- * Operators
   , (.)
   , ($)
@@ -181,7 +182,7 @@ import Control.Monad (Monad(..), MonadPlus(..), (=<<), (>=>), (<=<), join, repli
 import Control.Monad.Identity (Identity(..))
 import Control.Monad.IO.Class (MonadIO(..))
 import Control.Monad.Reader (MonadReader(..), Reader, ReaderT(..), asks, runReader)
-import Control.Monad.State (MonadState(..), State, StateT(..), gets, runState)
+import Control.Monad.State (MonadState(..), State, StateT(..), evalStateT, gets, runState)
 import Control.Monad.Trans (MonadTrans(..))
 import Control.Monad.Trans.Maybe (MaybeT(..))
 -- EitherT was good enough, but it looks like the rest of the world will be using ExceptT so now i have to make the aesthetic
