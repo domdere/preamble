@@ -16,6 +16,7 @@ module Preamble (
   , Traversable(..)
   , Alternative(..)
   , Applicative(..)
+  , Bounded(..)
   , Bifunctor(..)
   , Monad(..)
   , MonadIO(..)
@@ -173,6 +174,7 @@ import Prelude (
   , Double
   , Integer
   , Ordering(..)
+  , Bounded(..)
   , ($)
   , ($!)
   , (.)

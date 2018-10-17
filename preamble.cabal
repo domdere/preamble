@@ -41,6 +41,7 @@ library
     hs-source-dirs:     src
 
     exposed-modules:    Preamble
+                        Preamble.Unsafe
 
 test-suite              quickcheck
     default-language:   Haskell2010
